@@ -36,7 +36,7 @@ describe 'w_varnish::default' do
     it { should be_listening }
   end
 
-  describe command("curl -I http://172.31.2.12/varnishhealthcheck") do
+  describe command("curl -I http://0varnish.examplewebsite.com/varnishhealthcheck") do
     its(:stdout) {should match /200 Varnish server is healthy/}
   end
 end
