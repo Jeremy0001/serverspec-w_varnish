@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe 'w_varnish::geoip_varnish4' do
 
+  describe ppa('maxmind/ppa') do
+    it { should exist }
+    it { should be_enabled }
+  end
+
   describe package('libmaxminddb-dev') do
     it { should be_installed }
   end
